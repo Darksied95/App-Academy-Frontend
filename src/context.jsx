@@ -10,8 +10,13 @@ const AppProvider = ({ children }) => {
     setTodoLists([...todoLists, value]);
   }
 
+  function deleteTodo(id) {
+    const newTodoList = todoLists.filter((todo, index) => index !== id);
+    console.log(id);
+    setTodoLists(newTodoList);
+  }
   return (
-    <AppContext.Provider value={{ todoLists, addTodo }}>
+    <AppContext.Provider value={{ todoLists, addTodo, deleteTodo }}>
       {children}
     </AppContext.Provider>
   );
