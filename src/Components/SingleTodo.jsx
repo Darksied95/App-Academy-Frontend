@@ -1,8 +1,10 @@
 import useGlobalHook from "../Hooks/useGlobalHook";
 import Cross from "../assets/icon-cross.svg";
+import Check from "../assets/icon-check.svg";
 import { useRef } from "react";
-const SingleTodo = ({ todo, id }) => {
-  const { todoLists, deleteTodo, updateTodo } = useGlobalHook();
+
+const SingleTodo = ({ todo, id, completed }) => {
+  const { deleteTodo, updateTodo } = useGlobalHook();
   const pRef = useRef();
 
   function run(event) {
@@ -14,9 +16,16 @@ const SingleTodo = ({ todo, id }) => {
 
   return (
     <li className="group bg-ex-blue-500 py-5 flex items-center gap-6  px-3 border-b border-ex-grayBlue-400">
-      <span className="inline-block outline w-4 rounded-full aspect-square " />
+      <div
+        onClick={() => updateTodo(id, { completed: !completed })}
+        className={`flex justify-center items-center outline w-4 rounded-full aspect-square ${
+          completed && "bg-gradient-to-r"
+        } from-gradient-start  to-gradient-end outline-1`}
+      >
+        {completed && <img src={Check} />}
+      </div>
       <p
-        className="flex-1 "
+        className={`flex-1 ${completed && "line-through"}`}
         ref={pRef}
         onDoubleClick={(e) => (e.target.contentEditable = true)}
         onKeyDown={run}

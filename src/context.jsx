@@ -9,7 +9,7 @@ const AppProvider = ({ children }) => {
   function addTodo(value) {
     const newTodo = {
       id: todoLists.length + 1,
-      isCompleted: false,
+      completed: false,
       text: value,
     };
     setTodoLists([...todoLists, newTodo]);

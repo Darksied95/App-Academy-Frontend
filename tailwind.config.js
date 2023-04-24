@@ -8,8 +8,8 @@ export default {
     extend: {
       colors: {
         "primary-100": "hsl(220, 98%, 61%)",
-        "gradient-start ": "hsl(192, 100%, 67%)",
-        "gradient-end ": "hsl(280, 87%, 65%)",
+        "gradient-start": "hsl(192, 100%, 67%)",
+        "gradient-end": "hsl(280, 87%, 65%)",
         "ex-blue-300": "hsl(235, 21%, 11%)",
         "ex-blue-500": "hsl(235, 24%, 19%)",
         "ex-grayBlue-100": "hsl(234, 39%, 85%)",

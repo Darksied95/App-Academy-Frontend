@@ -6,7 +6,12 @@ const TodoLists = () => {
   return (
     <ul>
       {todoLists.map((todo) => (
-        <SingleTodo key={todo.id} todo={todo.text} id={todo.id} />
+        <SingleTodo
+          key={todo.id}
+          todo={todo.text}
+          id={todo.id}
+          completed={todo.completed}
+        />
       ))}
     </ul>
   );

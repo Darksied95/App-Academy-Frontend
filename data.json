@@ -2,7 +2,7 @@
   {
     "id": 1,
     "text": "Lorem ipsum dolor sit, amet consectetur",
-    "completed": false
+    "completed": true
   },
   {
     "id": 2,
