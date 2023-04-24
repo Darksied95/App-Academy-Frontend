@@ -21,14 +21,10 @@ const AppProvider = ({ children }) => {
   }
 
   function updateTodo(id, updateObj) {
-    const newTodoLists = [...todoLists];
-    const updatedTodoListIndex = newTodoLists.findIndex(
-      (todo) => todo.id === id
+    const newTodoLists = todoLists.map((todo) =>
+      todo.id === id ? { ...todo, ...updateObj } : todo
     );
-    newTodoLists[updatedTodoListIndex] = {
-      ...newTodoLists[updatedTodoListIndex],
-      ...updateObj,
-    };
+
     setTodoLists(newTodoLists);
   }
   return (
