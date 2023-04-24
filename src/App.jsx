@@ -15,34 +15,34 @@ function App() {
       />
       <div className="rounded-xl  overflow-hidden relative">
         <ul>
-          <li className="bg-ex-blue-500 py-5 flex items-center justify-between px-3 border-b">
-            <span className="inline-block outline w-4 rounded-full aspect-square" />
-            <p>Lorem ipsum dolor, sit amet conse</p>
+          <li className="bg-ex-blue-500 py-5 flex items-center gap-6  px-3 border-b">
+            <span className="inline-block outline w-4 rounded-full aspect-square " />
+            <p className="flex-1 ">Lorem ipsum dolor, sit amet conse</p>
             <img src={Cross} />
           </li>
-          <li className="bg-ex-blue-500 py-5 flex items-center justify-between px-3 border-b">
+          <li className="bg-ex-blue-500 py-5 flex items-center justify-between gap-6 px-3 border-b">
             <span className="inline-block outline w-4 rounded-full aspect-square" />
-            <p>Lorem ipsum dolor, sit amet conse</p>
+            <p className="flex-1 ">Lorem ipsum dolor, sit amet conse</p>
             <img src={Cross} />
           </li>
-          <li className="bg-ex-blue-500 py-5 flex items-center justify-between px-3 border-b">
+          <li className="bg-ex-blue-500 py-5 flex items-center justify-between gap-6 px-3 border-b">
             <span className="inline-block outline w-4 rounded-full aspect-square" />
-            <p>Lorem ipsum dolor, sit amet conse</p>
+            <p className="flex-1 ">Lorem ipsum dolor, sit amet conse</p>
             <img src={Cross} />
           </li>
-          <li className="bg-ex-blue-500 py-5 flex items-center justify-between px-3 border-b">
+          <li className="bg-ex-blue-500 py-5 flex items-center justify-between gap-6 px-3 border-b">
             <span className="inline-block outline w-4 rounded-full aspect-square" />
-            <p>Lorem ipsum dolor, sit amet conse</p>
+            <p className="flex-1 ">Lorem ipsum dolor, sit amet conse</p>
             <img src={Cross} />
           </li>
-          <li className="bg-ex-blue-500 flex items-center justify-between py-5 px-3 border-b">
+          <li className="bg-ex-blue-500 flex items-center justify-between py-5 gap-6 px-3 border-b">
             <span className="inline-block outline w-4 rounded-full aspect-square" />
-            <p>Lorem ipsum dolor, sit amet conse</p>
+            <p className="flex-1 ">Lorem ipsum dolor, sit amet conse</p>
             <img src={Cross} />
           </li>
         </ul>
         <div className="bg-ex-blue-500 text-ex-grayBlue-300 font-bold flex justify-between py-5 px-3 mb-16">
-          <p>5 items left</p>
+          <p className="flex-1 ">5 items left</p>
           <div className="bg-ex-blue-500 font-bold flex justify-center gap-5 p-3 text-ex-grayBlue-300 absolute bottom-0 left-0 w-full rounded-lg ">
             <button>All</button>
             <button>Active</button>
