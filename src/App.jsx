@@ -4,7 +4,7 @@ import Register from "./Components/page/Register";
 import Todo from "./Components/page/Todo";
 
 function App() {
-  return <Register />;
+  return <Todo />;
 }
 
 export default App;
