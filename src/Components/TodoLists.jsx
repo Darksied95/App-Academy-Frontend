@@ -2,10 +2,10 @@ import SingleTodo from "./SingleTodo";
 import useGlobalContext from "../Hooks/useGlobalHook";
 
 const TodoLists = () => {
-  const data = useGlobalContext();
+  const { todoLists } = useGlobalContext();
   return (
     <ul>
-      {data.map((todo, index) => (
+      {todoLists.map((todo, index) => (
         <SingleTodo key={index} todo={todo} />
       ))}
     </ul>

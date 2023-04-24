@@ -1,14 +1,19 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import data from "../data.json";
 
 const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
   const [todoLists, setTodoLists] = useState(data);
-  console.log(todoLists);
+
+  function addTodo(value) {
+    setTodoLists([...todoLists, value]);
+  }
 
   return (
-    <AppContext.Provider value={todoLists}>{children}</AppContext.Provider>
+    <AppContext.Provider value={{ todoLists, addTodo }}>
+      {children}
+    </AppContext.Provider>
   );
 };
 
