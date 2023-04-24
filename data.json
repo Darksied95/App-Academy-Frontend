@@ -1,8 +1,27 @@
 [
-  "Lorem ipsum dolor sit, amet consectetur ",
-  "Lorem ipsum dolor sit, amet consectetur ",
-  "Lorem ipsum dolor sit, amet consectetur ",
-  "Lorem ipsum dolor sit, amet consectetur ",
-  "Lorem ipsum dolor sit, amet consectetur ",
-  "Lorem ipsum dolor sit, amet consectetur "
+  {
+    "id": 1,
+    "text": "Lorem ipsum dolor sit, amet consectetur",
+    "completed": false
+  },
+  {
+    "id": 2,
+    "text": "Lorem ipsum dolor sit, amet consectetur",
+    "completed": false
+  },
+  {
+    "id": 3,
+    "text": "Lorem ipsum dolor sit, amet consectetur",
+    "completed": false
+  },
+  {
+    "id": 4,
+    "text": "Lorem ipsum dolor sit, amet consectetur",
+    "completed": false
+  },
+  {
+    "id": 5,
+    "text": "Lorem ipsum dolor sit, amet consectetur",
+    "completed": false
+  }
 ]

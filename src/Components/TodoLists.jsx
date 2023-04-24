@@ -5,8 +5,8 @@ const TodoLists = () => {
   const { todoLists } = useGlobalContext();
   return (
     <ul>
-      {todoLists.map((todo, index) => (
-        <SingleTodo key={index} todo={todo} id={index} />
+      {todoLists.map((todo) => (
+        <SingleTodo key={todo.id} todo={todo.text} id={todo.id} />
       ))}
     </ul>
   );

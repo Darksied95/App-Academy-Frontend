@@ -7,17 +7,28 @@ const AppProvider = ({ children }) => {
   const [todoLists, setTodoLists] = useState(data);
 
   function addTodo(value) {
-    setTodoLists([...todoLists, value]);
+    const newTodo = {
+      id: todoLists.length + 1,
+      isCompleted: false,
+      text: value,
+    };
+    setTodoLists([...todoLists, newTodo]);
   }
 
   function deleteTodo(id) {
-    const newTodoList = todoLists.filter((todo, index) => index !== id);
+    const newTodoList = todoLists.filter((todo) => todo.id !== id);
     setTodoLists(newTodoList);
   }
 
-  function updateTodo(id, todo) {
+  function updateTodo(id, updateObj) {
     const newTodoLists = [...todoLists];
-    newTodoLists[id] = todo;
+    const updatedTodoListIndex = newTodoLists.findIndex(
+      (todo) => todo.id === id
+    );
+    newTodoLists[updatedTodoListIndex] = {
+      ...newTodoLists[updatedTodoListIndex],
+      ...updateObj,
+    };
     setTodoLists(newTodoLists);
   }
   return (

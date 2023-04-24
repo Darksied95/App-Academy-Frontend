@@ -7,7 +7,7 @@ const SingleTodo = ({ todo, id }) => {
 
   function run(event) {
     if (event.code === "Enter") {
-      updateTodo(id, event.target.textContent);
+      updateTodo(id, { text: event.target.textContent });
       event.target.contentEditable = false;
     }
   }
