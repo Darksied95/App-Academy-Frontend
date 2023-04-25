@@ -8,11 +8,6 @@ const Register = () => {
 
         <form className="mb-10">
           <div className="mb-10">
-            <label className="block">Name : </label>
-            <input type="text" className="text-black w-full rounded-sm py-2" />
-          </div>
-
-          <div className="mb-10">
             <label className="block">Username : </label>
             <input type="text" className="text-black w-full rounded-sm py-2" />
           </div>
@@ -23,15 +18,8 @@ const Register = () => {
               className="text-black w-full rounded-sm py-2"
             />
           </div>
-          <div>
-            <label className="block">Confirm Password :</label>
-            <input
-              type="password"
-              className="text-black w-full rounded-sm py-2"
-            />
-          </div>
           <button className="bg-green-400 mt-9 py-2 px-4 rounded">
-            Register
+            <Link to={"/dashboard"}>Register</Link>
           </button>
         </form>
         <p>

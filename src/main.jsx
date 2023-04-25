@@ -10,11 +10,11 @@ import Todo from "./Components/page/Todo.jsx";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/dashboard",
     element: <Todo />,
   },
   {
-    path: "/login",
+    path: "/",
     element: <Login />,
   },
   {

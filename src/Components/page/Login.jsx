@@ -17,7 +17,9 @@ const Login = () => {
               className="text-black w-full rounded-sm py-2"
             />
           </div>
-          <button className="bg-green-400 mt-9 py-2 px-4 rounded">Login</button>
+          <button className="bg-green-400 mt-9 py-2 px-4 rounded">
+            <Link to={"/dashboard"}>Login</Link>
+          </button>
         </form>
         <p>
           Not a User?{" "}
