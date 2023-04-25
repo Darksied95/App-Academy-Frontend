@@ -1,12 +1,21 @@
 import { useState } from "react";
 import useGlobalHook from "../Hooks/useGlobalHook";
+import { createTodo } from "../Services/TodoService";
+
 const AddTodo = () => {
   const { addTodo } = useGlobalHook();
   const [inputValue, setInputValue] = useState("");
 
-  function run() {
-    addTodo(inputValue);
-    setInputValue("");
+  async function createNewTodo() {
+    try {
+      await createTodo(inputValue);
+
+      addTodo(inputValue);
+
+      setInputValue("");
+    } catch (error) {
+      alert(error);
+    }
   }
   return (
     <input
@@ -15,7 +24,7 @@ const AddTodo = () => {
       className="w-full bg-ex-blue-500 py-5 rounded-md pl-9 mb-7"
       value={inputValue}
       onChange={(e) => setInputValue(e.target.value)}
-      onKeyDown={(e) => e.code === "Enter" && run()}
+      onKeyDown={(e) => e.code === "Enter" && createNewTodo()}
     />
   );
 };
