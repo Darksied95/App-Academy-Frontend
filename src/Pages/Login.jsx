@@ -12,7 +12,8 @@ const Login = () => {
     e.preventDefault();
     try {
       const data = await loginUser(loginDetails);
-      console.log(data);
+      localStorage.setItem("token", data.token);
+      window.location = "/dashboard";
     } catch (error) {
       alert("something went wrong");
       console.log(error);
