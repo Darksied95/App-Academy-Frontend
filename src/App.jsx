@@ -1,7 +1,9 @@
 import "./App.css";
+import { useEffect } from "react";
 
 function App() {
-  return <>App </>;
+  useEffect(() => {});
+  return <div></div>;
 }
 
 export default App;
