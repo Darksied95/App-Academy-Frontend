@@ -1,4 +1,4 @@
 {
-  "apiTodoEndPoint": "localhost:5000/api/todos",
-  "apiUserEndPoint": "localhost:5000/api/user"
+  "apiTodoEndPoint": "http://localhost:5000/api/todos",
+  "apiUserEndPoint": "http://localhost:5000/api/user"
 }
