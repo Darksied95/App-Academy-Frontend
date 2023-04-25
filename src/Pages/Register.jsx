@@ -1,12 +1,17 @@
 import { Link } from "react-router-dom";
+import * as UserService from "../Services/UserService";
 
 const Register = () => {
+  function handleSubmit() {
+    UserService.registerUser();
+  }
+
   return (
     <main className="min-h-screen bg-ex-blue-500 text-white ">
       <div className="px-5 py-[10vh] max-w-[700px] mx-auto">
         <h1 className="text-3xl mb-8">Register</h1>
 
-        <form className="mb-10">
+        <form className="mb-10" onSubmit={handleSubmit}>
           <div className="mb-10">
             <label className="block">Username : </label>
             <input type="text" className="text-black w-full rounded-sm py-2" />
