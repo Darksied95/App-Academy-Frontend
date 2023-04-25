@@ -3,6 +3,9 @@ import More from "../Components/More";
 import TodoLists from "../Components/TodoLists";
 
 const Todo = () => {
+  const token = localStorage.getItem("token");
+  if (!token) return (window.location = "/");
+
   return (
     <main className="bg-mobile bg-no-repeat bg-contain   bg-ex-blue-300 min-h-screen  pt-1 px-6 text-sm text-ex-grayBlue-100 md:bg-desktop">
       <div className="max-w-[720px] mx-auto">
