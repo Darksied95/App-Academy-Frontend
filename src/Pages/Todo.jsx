@@ -1,6 +1,6 @@
-import AddTodo from "../../Components/AddTodo";
-import More from "../../Components/More";
-import TodoLists from "../../Components/TodoLists";
+import AddTodo from "../Components/AddTodo";
+import More from "../Components/More";
+import TodoLists from "../Components/TodoLists";
 
 const Todo = () => {
   return (

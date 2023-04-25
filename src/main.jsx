@@ -3,10 +3,10 @@ import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import { AppProvider } from "./context.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Register from "./Components/page/Register.jsx";
+import Register from "./Pages/Register.jsx";
 import "./index.css";
-import Login from "./Components/page/Login.jsx";
-import Todo from "./Components/page/Todo.jsx";
+import Login from "./Pages/Login.jsx";
+import Todo from "./Pages/Todo.jsx";
 
 const router = createBrowserRouter([
   {
