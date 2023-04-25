@@ -1,10 +1,24 @@
-import React, { useState } from "react";
-import data from "../data.json";
+import React, { useEffect, useState } from "react";
+import {
+  getTodos,
+  createTodo,
+  deleteTodo,
+  updateTodo,
+} from "./Services/TodoService";
 
 const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
-  const [todoLists, setTodoLists] = useState(data);
+  const [todoLists, setTodoLists] = useState([]);
+
+  useEffect(() => {
+    async function run() {
+      const data = await getTodos();
+      setTodoLists(data);
+    }
+
+    run();
+  }, []);
 
   function addTodo(value) {
     const newTodo = {
