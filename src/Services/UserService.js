@@ -8,7 +8,6 @@ export async function registerUser(user) {
 }
 
 export async function loginUser(user) {
-    const { data } = await http.post(apiUserEndPoint, user)
-    console.log(data);
+    const { data } = await http.post(apiUserEndPoint + '/login', user)
     return data
 }

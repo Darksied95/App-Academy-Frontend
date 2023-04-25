@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import * as UserService from "../Services/UserService";
+import { registerUser } from "../Services/UserService";
 import { useState } from "react";
 
 const Register = () => {
@@ -11,7 +11,7 @@ const Register = () => {
   async function handleSubmit(e) {
     e.preventDefault();
     try {
-      const data = await UserService.registerUser(registrationDetails);
+      const data = await registerUser(registrationDetails);
       console.log(data);
     } catch (error) {
       alert("something went wrong");
@@ -59,7 +59,7 @@ const Register = () => {
         </form>
         <p>
           Already a User?{" "}
-          <Link to="/login" className="text-blue-300 underline">
+          <Link to="/" className="text-blue-300 underline">
             Login
           </Link>
         </p>
