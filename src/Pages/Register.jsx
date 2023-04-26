@@ -15,8 +15,7 @@ const Register = () => {
       localStorage.setItem("token", data.token);
       window.location = "/dashboard";
     } catch (error) {
-      alert("something went wrong");
-      console.log(error);
+      alert("Something went wrong, Please try again.");
     }
   }
 
