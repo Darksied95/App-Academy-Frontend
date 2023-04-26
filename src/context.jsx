@@ -38,7 +38,9 @@ const AppProvider = ({ children }) => {
     setTodoLists(newTodoLists);
   }
   return (
-    <AppContext.Provider value={{ todoLists, addTodo, deleteTodo, updateTodo }}>
+    <AppContext.Provider
+      value={{ todoLists, addTodo, deleteTodo, updateTodo, setTodoLists }}
+    >
       {children}
     </AppContext.Provider>
   );

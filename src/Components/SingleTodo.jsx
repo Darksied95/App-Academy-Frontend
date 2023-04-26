@@ -2,6 +2,7 @@ import useGlobalHook from "../Hooks/useGlobalHook";
 import Cross from "../assets/icon-cross.svg";
 import Check from "../assets/icon-check.svg";
 import { useRef } from "react";
+import isUserValid from "../Services/isUserValid";
 import * as TodoHandlers from "../Services/TodoService";
 
 const SingleTodo = ({ todo, id, completed }) => {
@@ -9,8 +10,8 @@ const SingleTodo = ({ todo, id, completed }) => {
   const pRef = useRef();
 
   async function handleTodoUpdate(event, id) {
-    console.log(event);
     if (event.code === "Enter") {
+      isUserValid();
       await TodoHandlers.updateTodo(id, { text: event.target.textContent });
       updateTodo(id, { text: event.target.textContent });
       event.target.contentEditable = false;
@@ -18,21 +19,21 @@ const SingleTodo = ({ todo, id, completed }) => {
   }
 
   async function handleComplete(id) {
+    isUserValid();
     try {
       await TodoHandlers.updateTodo(id, { completed: !completed });
       updateTodo(id, { completed: !completed });
     } catch (error) {
-      console.log(error);
+      alert("Something went wrong");
     }
   }
 
   async function handleDelete(id) {
+    isUserValid();
     try {
       await TodoHandlers.deleteTodo(id);
       deleteTodo(id);
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   }
 
   return (
