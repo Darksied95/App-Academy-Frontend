@@ -1,10 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {
-  getTodos,
-  createTodo,
-  deleteTodo,
-  updateTodo,
-} from "./Services/TodoService";
+import { getTodos } from "./Services/TodoService";
 
 const AppContext = React.createContext();
 
@@ -13,11 +8,12 @@ const AppProvider = ({ children }) => {
 
   useEffect(() => {
     async function run() {
-      const data = await getTodos();
+      const { data } = await getTodos();
       setTodoLists(data);
     }
 
-    run();
+    const token = localStorage.getItem("token");
+    if (token) run();
   }, []);
 
   function addTodo(value) {
