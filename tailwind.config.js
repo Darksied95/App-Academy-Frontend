@@ -20,8 +20,8 @@ export default {
 
       },
       backgroundImage: {
-        mobile: "url('src/assets/bg-mobile-dark.jpg')",
-        desktop: "url('src/assets/bg-desktop-dark.jpg')"
+        mobile: "url('.src/assets/bg-mobile-dark.jpg')",
+        desktop: "url('.src/assets/bg-desktop-dark.jpg')"
       },
       fontWeight: {
         normal: 400,
