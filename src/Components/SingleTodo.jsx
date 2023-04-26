@@ -1,13 +1,12 @@
+import PropTypes from "prop-types";
 import useGlobalHook from "../Hooks/useGlobalHook";
 import Cross from "../assets/icon-cross.svg";
 import Check from "../assets/icon-check.svg";
-import { useRef } from "react";
 import isUserValid from "../Services/isUserValid";
 import * as TodoHandlers from "../Services/TodoService";
 
 const SingleTodo = ({ todo, id, completed }) => {
   const { deleteTodo, updateTodo, todoLists, setTodoLists } = useGlobalHook();
-  const pRef = useRef();
 
   async function handleTodoUpdate(event, id) {
     if (event.code === "Enter") {
@@ -52,7 +51,6 @@ const SingleTodo = ({ todo, id, completed }) => {
       </div>
       <p
         className={`flex-1 ${completed && "line-through"}`}
-        ref={pRef}
         onDoubleClick={(e) => (e.target.contentEditable = true)}
         onKeyDown={(event) => handleTodoUpdate(event, id)}
       >
@@ -65,6 +63,12 @@ const SingleTodo = ({ todo, id, completed }) => {
       />
     </li>
   );
+};
+
+SingleTodo.propTypes = {
+  todo: PropTypes.string,
+  id: PropTypes.number,
+  completed: PropTypes.bool,
 };
 
 export default SingleTodo;
