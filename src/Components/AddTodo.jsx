@@ -1,20 +1,26 @@
 import { useState } from "react";
 import useGlobalHook from "../Hooks/useGlobalHook";
 import { createTodo } from "../Services/TodoService";
+import isUserValid from "../Services/isUserValid";
 
 const AddTodo = () => {
-  const { addTodo } = useGlobalHook();
+  const { addTodo, todoLists, setTodoLists } = useGlobalHook();
   const [inputValue, setInputValue] = useState("");
 
   async function createNewTodo() {
+    const oldTodoLists = [...todoLists];
     try {
-      await createTodo(inputValue);
+      isUserValid();
 
       addTodo(inputValue);
 
       setInputValue("");
+
+      await createTodo(inputValue);
     } catch (error) {
-      alert(error);
+      setTodoLists(oldTodoLists);
+
+      alert("Something went wrong");
     }
   }
   return (

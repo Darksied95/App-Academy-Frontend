@@ -6,14 +6,14 @@ import isUserValid from "../Services/isUserValid";
 import * as TodoHandlers from "../Services/TodoService";
 
 const SingleTodo = ({ todo, id, completed }) => {
-  const { deleteTodo, updateTodo } = useGlobalHook();
+  const { deleteTodo, updateTodo, todoLists, setTodoLists } = useGlobalHook();
   const pRef = useRef();
 
   async function handleTodoUpdate(event, id) {
     if (event.code === "Enter") {
       isUserValid();
-      await TodoHandlers.updateTodo(id, { text: event.target.textContent });
       updateTodo(id, { text: event.target.textContent });
+      await TodoHandlers.updateTodo(id, { text: event.target.textContent });
       event.target.contentEditable = false;
     }
   }
@@ -21,9 +21,10 @@ const SingleTodo = ({ todo, id, completed }) => {
   async function handleComplete(id) {
     isUserValid();
     try {
-      await TodoHandlers.updateTodo(id, { completed: !completed });
       updateTodo(id, { completed: !completed });
+      await TodoHandlers.updateTodo(id, { completed: !completed });
     } catch (error) {
+      setTodoLists(todoLists);
       alert("Something went wrong");
     }
   }
@@ -31,9 +32,12 @@ const SingleTodo = ({ todo, id, completed }) => {
   async function handleDelete(id) {
     isUserValid();
     try {
-      await TodoHandlers.deleteTodo(id);
       deleteTodo(id);
-    } catch (error) {}
+      await TodoHandlers.deleteTodo(id);
+    } catch (error) {
+      setTodoLists(todoLists);
+      alert("Something went wrong");
+    }
   }
 
   return (

@@ -3,6 +3,8 @@ import { useState } from "react";
 import { loginUser } from "../Services/UserService";
 
 const Login = () => {
+  localStorage.removeItem("token");
+
   const [loginDetails, setLoginDetails] = useState({
     username: "",
     password: "",
