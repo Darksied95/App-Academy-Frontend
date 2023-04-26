@@ -45,7 +45,7 @@ const SingleTodo = ({ todo, id, completed }) => {
         onClick={() => handleComplete(id)}
         className={`flex justify-center items-center outline w-4 rounded-full aspect-square ${
           completed && "bg-gradient-to-r"
-        } from-gradient-start  to-gradient-end outline-1`}
+        } from-gradient-start  to-gradient-end outline-1 cursor-pointer`}
       >
         {completed && <img src={Check} />}
       </div>
@@ -58,7 +58,7 @@ const SingleTodo = ({ todo, id, completed }) => {
       </p>
       <img
         src={Cross}
-        className="hidden group-hover:block"
+        className="hidden group-hover:block cursor-pointer"
         onClick={() => handleDelete(id)}
       />
     </li>
