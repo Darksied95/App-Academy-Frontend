@@ -1,4 +1,4 @@
 {
-  "apiTodoEndPoint": "http://localhost:5000/api/todos",
-  "apiUserEndPoint": "http://localhost:5000/api/user"
+  "apiTodoEndPoint": "https://aatodoapp.onrender.com/api/todos",
+  "apiUserEndPoint": "https://aatodoapp.onrender.com/api/user"
 }
