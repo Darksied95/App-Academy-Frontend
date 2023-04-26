@@ -11,9 +11,9 @@ const SingleTodo = ({ todo, id, completed }) => {
   async function handleTodoUpdate(event, id) {
     if (event.code === "Enter") {
       isUserValid();
+      event.target.contentEditable = false;
       updateTodo(id, { text: event.target.textContent });
       await TodoHandlers.updateTodo(id, { text: event.target.textContent });
-      event.target.contentEditable = false;
     }
   }
 
