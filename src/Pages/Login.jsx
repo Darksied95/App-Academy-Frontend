@@ -15,8 +15,7 @@ const Login = () => {
       localStorage.setItem("token", data.token);
       window.location = "/dashboard";
     } catch (error) {
-      alert("something went wrong");
-      console.log(error);
+      alert("Wrong Username or  Password, try again.");
     }
   }
   return (
