@@ -13,7 +13,7 @@ const Todo = () => {
           TODO
         </h1>
         <AddTodo />
-        <div className="rounded-xl  overflow-hidden relative">
+        <div className="rounded-xl  overflow-hidden relative ">
           <TodoLists />
           <More />
         </div>

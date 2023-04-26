@@ -4,7 +4,7 @@ import useGlobalContext from "../Hooks/useGlobalHook";
 const TodoLists = () => {
   const { todoLists } = useGlobalContext();
   return (
-    <ul>
+    <ul className="max-h-[350px] overflow-y-auto">
       {todoLists.map((todo) => (
         <SingleTodo
           key={todo.id}
